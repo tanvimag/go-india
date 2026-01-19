@@ -1,0 +1,413 @@
+.settings-container {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.settings-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.settings-header {
+  margin-bottom: 30px;
+}
+
+.settings-header h1 {
+  font-size: 2.5rem;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+.settings-header p {
+  color: var(--gray);
+  font-size: 1.1rem;
+}
+
+/* Settings Layout */
+.settings-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+}
+
+/* Sidebar */
+.settings-sidebar {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.sidebar-header {
+  padding: 25px;
+  border-bottom: 1px solid #eee;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.user-details h3 {
+  font-size: 1.2rem;
+  color: var(--dark);
+  margin-bottom: 5px;
+}
+
+.user-details p {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.settings-nav {
+  padding: 20px 0;
+}
+
+.nav-item {
+  width: 100%;
+  padding: 15px 25px;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--gray);
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: left;
+}
+
+.nav-item:hover {
+  background: var(--light-gray);
+  color: var(--primary);
+}
+
+.nav-item.active {
+  background: var(--primary);
+  color: white;
+  border-left: 4px solid var(--secondary);
+}
+
+.nav-item i {
+  width: 20px;
+  font-size: 1.1rem;
+}
+
+.nav-item span {
+  font-weight: 500;
+}
+
+/* Main Content */
+.settings-main {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+
+.settings-section {
+  margin-bottom: 40px;
+}
+
+.settings-section h3 {
+  font-size: 1.5rem;
+  color: var(--dark);
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Form Groups */
+.toggle-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.toggle-group:last-child {
+  border-bottom: none;
+}
+
+.toggle-group label {
+  font-weight: 500;
+  color: var(--dark);
+}
+
+/* Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Radio Options */
+.toggle-options {
+  display: flex;
+  gap: 15px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+.radio-option span {
+  color: var(--gray);
+  font-weight: 500;
+}
+
+.radio-option input:checked + span {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Plan Card */
+.plan-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px;
+  border-radius: var(--border-radius);
+  margin-bottom: 25px;
+}
+
+.plan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.plan-header h4 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.plan-badge {
+  background: white;
+  color: #764ba2;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.plan-features {
+  margin-bottom: 25px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.feature i {
+  color: #4CAF50;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.period {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+/* Billing Info */
+.billing-info {
+  background: var(--light-gray);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  margin-top: 20px;
+}
+
+.billing-info p {
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+
+.billing-info p:last-child {
+  margin-bottom: 0;
+}
+
+/* Security Items */
+.security-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: var(--light-gray);
+  border-radius: var(--border-radius);
+  margin-bottom: 15px;
+}
+
+.security-info h4 {
+  font-size: 1.1rem;
+  color: var(--dark);
+  margin-bottom: 5px;
+}
+
+.security-info p {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Danger Zone */
+.danger-zone {
+  margin-top: 40px;
+  padding: 25px;
+  background: #f8d7da;
+  border-radius: var(--border-radius);
+  border: 1px solid #f5c6cb;
+}
+
+.danger-zone h4 {
+  color: #721c24;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.danger-actions {
+  display: flex;
+  gap: 15px;
+}
+
+/* Settings Footer */
+.settings-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  padding-top: 30px;
+  border-top: 2px solid var(--light-gray);
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .settings-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .settings-sidebar {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .settings-content {
+    padding: 15px;
+  }
+  
+  .settings-main {
+    padding: 20px;
+  }
+  
+  .toggle-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .security-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .settings-footer {
+    flex-direction: column;
+  }
+  
+  .danger-actions {
+    flex-direction: column;
+  }
+}

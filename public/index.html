@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Go India - Discover Incredible India through travel vlogs" />
+    
+    <title>Go India | Discover Incredible India</title>
+    
+    <!-- Font Awesome Icons - ESSENTIAL FOR ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- Google Fonts (Optional but nice) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- REMOVE OR COMMENT OUT THESE LINES since you don't have these files -->
+    <!--
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    -->
+    
+    <!-- Add this simple emoji favicon instead -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌏</text></svg>" />
+    
+    <style>
+      /* Basic reset and loading styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background: #f8f9fa;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+      
+      /* Loading spinner */
+      .app-loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
+      
+      .loading-spinner {
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top: 4px solid white;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <!-- Loading state (shown until React loads) -->
+    <div id="app-loading" class="app-loading">
+      <div class="loading-spinner"></div>
+      <h2>Loading Go India...</h2>
+      <p>Discovering incredible travel experiences</p>
+    </div>
+    
+    <!-- React app mounts here -->
+    <div id="root"></div>
+    
+    <!-- Script to hide loading screen when React loads -->
+    <script>
+      // Hide loading screen when React app mounts
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const loadingEl = document.getElementById('app-loading');
+          if (loadingEl) {
+            loadingEl.style.display = 'none';
+          }
+        }, 1000);
+      });
+      
+      // Error handling
+      window.addEventListener('error', function(e) {
+        console.error('Application error:', e.error);
+        const loadingEl = document.getElementById('app-loading');
+        if (loadingEl) {
+          loadingEl.innerHTML = `
+            <div style="text-align: center; padding: 20px;">
+              <i class="fas fa-exclamation-triangle" style="font-size: 48px; color: #ff6b6b; margin-bottom: 20px;"></i>
+              <h2>Something went wrong</h2>
+              <p>Please refresh the page or try again later.</p>
+              <button onclick="window.location.reload()" style="
+                background: white;
+                color: #667eea;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                margin-top: 20px;
+                cursor: pointer;
+                font-weight: bold;
+              ">
+                Refresh Page
+              </button>
+            </div>
+          `;
+        }
+      });
+    </script>
+  </body>
+</html>
